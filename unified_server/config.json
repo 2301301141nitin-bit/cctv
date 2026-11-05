@@ -1,0 +1,50 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8000
+  },
+  "cameras": [],
+  "ai": {
+    "realtime_model": "yolov8m.pt",
+    "clip_model": "openai/clip-vit-large-patch14",
+    "targets": [
+      "person",
+      "car"
+    ],
+    "confidence": 0.25,
+    "frame_sampling": 3
+  },
+  "rules": {
+    "restricted_zones": [],
+    "loitering": [],
+    "group_detection": [],
+    "abandoned_object": []
+  },
+  "firebase": {
+    "enabled": false,
+    "credentials_path": "serviceAccountKey.json",
+    "storage_bucket": "",
+    "api_key": "",
+    "auth_domain": "",
+    "project_id": "",
+    "messaging_sender_id": "",
+    "app_id": ""
+  },
+  "static_analysis": {
+    "fps_extract": 1.0,
+    "batch_size": 16
+  },
+  "alerts": {
+    "enabled": true,
+    "cooldown_seconds": 10,
+    "thresholds": {
+      "person": 0.6,
+      "car": 0.5,
+      "weapon": 0.3,
+      "knife": 0.3,
+      "fire": 0.3
+    },
+    "popup_enabled": true,
+    "sound_enabled": true
+  }
+}

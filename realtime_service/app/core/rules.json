@@ -1,0 +1,45 @@
+{
+    "cameras": {
+        "0": {
+            "restricted_zones": [
+                {
+                    "name": "Server Room Entry",
+                    "polygon": [[100, 100], [400, 100], [400, 300], [100, 300]],
+                    "severity": "high",
+                    "cooldown_seconds": 30,
+                    "target_classes": ["person"]
+                }
+            ],
+            "loitering": [
+                {
+                    "name": "Lobby Loitering",
+                    "polygon": [[0, 0], [640, 0], [640, 480], [0, 480]],
+                    "threshold_seconds": 60,
+                    "severity": "medium",
+                    "cooldown_seconds": 300,
+                    "target_classes": ["person"]
+                }
+            ],
+            "group_detection": [
+                {
+                    "name": "Crowd Formation",
+                    "min_people": 3,
+                    "max_distance": 100,
+                    "threshold_seconds": 10,
+                    "severity": "low",
+                    "cooldown_seconds": 120
+                }
+            ],
+            "abandoned_object": [
+                {
+                    "name": "Abandoned Bag",
+                    "polygon": [[0, 0], [640, 0], [640, 480], [0, 480]],
+                    "threshold_seconds": 300,
+                    "severity": "high",
+                    "cooldown_seconds": 600,
+                    "target_classes": ["backpack", "suitcase", "handbag"]
+                }
+            ]
+        }
+    }
+}

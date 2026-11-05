@@ -1,0 +1,33 @@
+# Antigravity CCTV Unified Platform - Python Dependencies
+# Combined requirements from backend/ and realtime_service/
+
+# Web Framework
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.2
+python-multipart>=0.0.6
+websockets>=12.0
+
+# Data & ORM
+sqlalchemy>=2.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# AI / ML - Static Analysis (CLIP)
+# NOTE: Install PyTorch CUDA separately first:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+faiss-cpu>=1.7.0
+numpy>=1.24.0
+Pillow>=10.0.0
+
+# AI / ML - Real-Time (YOLO)
+ultralytics>=8.0.0
+opencv-python>=4.8.0
+
+# Event Engine
+shapely>=2.0.0
+
+# Firebase (optional)
+firebase-admin>=6.5.0

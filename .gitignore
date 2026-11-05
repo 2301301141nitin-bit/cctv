@@ -1,0 +1,105 @@
+# ==============================================================================
+# Git Ignore - Antigravity CCTV AI Analysis Platform
+# ==============================================================================
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+*/.pytest_cache/
+
+# Virtual Environments
+venv/
+*/venv/
+.venv/
+*/.venv/
+env/
+*/env/
+ENV/
+*/ENV/
+
+# Python Distribution & PyInstaller builds
+build/
+*/build/
+dist/
+*/dist/
+*.egg-info/
+*.egg
+*.manifest
+*.whl
+
+# Node / Frontend Dependencies & Builds
+node_modules/
+*/node_modules/
+.next/
+*/.next/
+out/
+*/out/
+dist-ssr/
+*.tsbuildinfo
+next-env.d.ts
+.vercel/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# AI Weights & Heavy Model Checkpoints (>50MB, auto-downloaded on first run)
+*.pt
+*.pth
+*.onnx
+*.bin
+*.weights
+*.engine
+yolov8*.pt
+torch-*.whl
+
+# Databases & Runtime State
+*.db
+*.sqlite
+*.sqlite3
+cctv.db
+backend/cctv.db
+unified_server/cctv.db
+
+# CCTV Footage & Generated Frame Dumps
+backend/static/videos/*
+!backend/static/videos/.gitkeep
+backend/static/frames/*
+!backend/static/frames/.gitkeep
+unified_server/backend/static/videos/*
+!unified_server/backend/static/videos/.gitkeep
+unified_server/backend/static/frames/*
+!unified_server/backend/static/frames/.gitkeep
+static/videos/*
+!static/videos/.gitkeep
+static/frames/*
+!static/frames/.gitkeep
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Generated Software Licenses
+*.lic
+backend/license.lic
+
+# OS / Editor Artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
