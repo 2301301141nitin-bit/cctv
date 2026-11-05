@@ -157,9 +157,9 @@ else:
         return await serve_spa_not_built()
 
 
-# ─── Root Redirect ───────────────────────────────────────────────────────────
+# ─── Root Redirect & Health Check ──────────────────────────────────────────
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def root_redirect():
     """Redirect root to the application."""
     from fastapi.responses import RedirectResponse
