@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  cctv-platform:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: antigravity-cctv
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+    restart: unless-stopped
+    volumes:
+      - cctv-videos:/app/backend/static/videos
+      - cctv-frames:/app/backend/static/frames
+
+volumes:
+  cctv-videos:
+  cctv-frames:

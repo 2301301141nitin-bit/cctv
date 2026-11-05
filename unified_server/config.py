@@ -95,14 +95,23 @@ class UnifiedConfig(BaseModel):
 
 def load_config() -> UnifiedConfig:
     """Load configuration from config.json, creating defaults if missing."""
+    cfg = UnifiedConfig()
     if os.path.exists(CONFIG_PATH):
         try:
             with open(CONFIG_PATH, "r") as f:
                 data = json.load(f)
-            return UnifiedConfig(**data)
+            cfg = UnifiedConfig(**data)
         except Exception as e:
             print(f"Warning: Could not parse config.json ({e}), using defaults.")
-    return UnifiedConfig()
+    # Allow environment variable overrides for cloud hosting
+    if "PORT" in os.environ:
+        try:
+            cfg.server.port = int(os.environ["PORT"])
+        except ValueError:
+            pass
+    if "HOST" in os.environ:
+        cfg.server.host = os.environ["HOST"]
+    return cfg
 
 
 def save_config(config: UnifiedConfig):
